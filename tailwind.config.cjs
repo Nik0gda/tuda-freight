@@ -9,6 +9,8 @@ module.exports = {
       white: "#FFFFFF",
       sidebar: "#D9D9D9",
       black: "#000000",
+      "selected-language": "#B5D6B2",
+      language: "#DDDDDD",
     },
     extend: {},
   },

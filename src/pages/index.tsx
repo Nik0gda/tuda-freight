@@ -3,9 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import CallNowButton from "../Components/CallNowButton";
+import CallNowPopup from "../Components/CallNowPopup";
 import NavbarButton from "../Components/NavbarButton";
+import PhoneSVG from "../Components/PhoneSVG";
+import PhoneSVGCall from "../Components/PhoneSVGCall";
 import SectionTitle from "../Components/SectionTitle";
 import Sidebar from "../Components/Sidebar";
+import TextSection from "../Components/TextSection";
 
 const Home: NextPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -55,7 +59,27 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="relative h-screen w-screen"></div>
+
+        {/* About us */}
+        <TextSection title="Who are we?">
+          International company focused on creating the best conditions for the
+          drivers and truck owners. With the highest CPM on the market we
+          attract best drivers for the best loads across United States
+        </TextSection>
+        <TextSection title="Are you an owner operator?">
+          We rent trailers under our authority and provide starting at 12% from
+          gross income <br />
+          <br /> Our operators are waiting for your call 24/7
+        </TextSection>
+        <TextSection title="What do we provide?">
+          We rent trailers under our authority and provide starting at 12% from
+          gross income <br />
+          <br /> Our operators are waiting for your call 24/7
+        </TextSection>
+        <CallNowPopup />
+        {/* <div className="relative h-screen w-screen">
+
+        </div> */}
         {/* <div className="h-screen w-screen"></div> */}
       </main>
     </>
