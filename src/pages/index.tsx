@@ -4,12 +4,16 @@ import Image from "next/image";
 import { useState } from "react";
 import CallNowButton from "../Components/CallNowButton";
 import CallNowPopup from "../Components/CallNowPopup";
+import CarSVG from "../Components/CarSVG";
+import HeartSVG from "../Components/HeartSVG";
+import HomeSVG from "../Components/HomeSVG";
 import NavbarButton from "../Components/NavbarButton";
 import PhoneSVG from "../Components/PhoneSVG";
 import PhoneSVGCall from "../Components/PhoneSVGCall";
 import SectionTitle from "../Components/SectionTitle";
 import Sidebar from "../Components/Sidebar";
 import TextSection from "../Components/TextSection";
+import WalletSVG from "../Components/WalletSVG";
 
 const Home: NextPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -72,9 +76,38 @@ const Home: NextPage = () => {
           <br /> Our operators are waiting for your call 24/7
         </TextSection>
         <TextSection title="What do we provide?">
-          We rent trailers under our authority and provide starting at 12% from
-          gross income <br />
-          <br /> Our operators are waiting for your call 24/7
+          <div className="flex flex-col gap-y-10">
+            <div className="flex items-center gap-x-2">
+              <div>
+                <HomeSVG />
+              </div>
+              <p>Flexible schedule to be home with your family every weekend</p>
+            </div>
+            <div className="flex items-center gap-x-2">
+              <div>
+                <CarSVG />
+              </div>
+              <p> Dispatch experience is based on flatbed, reefer, dry van</p>
+            </div>
+            <div className="flex items-center gap-x-2">
+              <div>
+                <WalletSVG />
+              </div>
+              <div className="w-full">
+                <p className="mx-auto w-36"> Money transfer every friday</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-2">
+              <div>
+                <HeartSVG />
+              </div>
+              <div className="w-full">
+                <p className="mx-auto w-52">
+                  Occupational insurance and 24/7 safety dep.
+                </p>
+              </div>
+            </div>
+          </div>
         </TextSection>
         <CallNowPopup />
         {/* <div className="relative h-screen w-screen">
