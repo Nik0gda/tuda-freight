@@ -5,6 +5,7 @@ import { useState } from "react";
 import CallNowButton from "../Components/CallNowButton";
 import CallNowPopup from "../Components/CallNowPopup";
 import CarSVG from "../Components/CarSVG";
+import ContactForm from "../Components/ContactForm";
 import HeartSVG from "../Components/HeartSVG";
 import HomeSVG from "../Components/HomeSVG";
 import NavbarButton from "../Components/NavbarButton";
@@ -41,7 +42,10 @@ const Home: NextPage = () => {
         {/* Hero */}
 
         <div className="h-screen w-screen bg-[url('/background.jpg')] bg-cover bg-center">
-          <Sidebar isSidebarOpen={isSidebarOpen} />
+          <Sidebar
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+          />
           <NavbarButton
             setIsSidebarOpen={setIsSidebarOpen}
             isSidebarOpen={isSidebarOpen}
@@ -65,53 +69,62 @@ const Home: NextPage = () => {
         </div>
 
         {/* About us */}
-        <TextSection title="Who are we?">
-          International company focused on creating the best conditions for the
-          drivers and truck owners. With the highest CPM on the market we
-          attract best drivers for the best loads across United States
-        </TextSection>
-        <TextSection title="Are you an owner operator?">
-          We rent trailers under our authority and provide starting at 12% from
-          gross income <br />
-          <br /> Our operators are waiting for your call 24/7
-        </TextSection>
-        <TextSection title="What do we provide?">
-          <div className="flex flex-col gap-y-10">
-            <div className="flex items-center gap-x-2">
-              <div>
-                <HomeSVG />
-              </div>
-              <p>Flexible schedule to be home with your family every weekend</p>
-            </div>
-            <div className="flex items-center gap-x-2">
-              <div>
-                <CarSVG />
-              </div>
-              <p> Dispatch experience is based on flatbed, reefer, dry van</p>
-            </div>
-            <div className="flex items-center gap-x-2">
-              <div>
-                <WalletSVG />
-              </div>
-              <div className="w-full">
-                <p className="mx-auto w-36"> Money transfer every friday</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-x-2">
-              <div>
-                <HeartSVG />
-              </div>
-              <div className="w-full">
-                <p className="mx-auto w-52">
-                  Occupational insurance and 24/7 safety dep.
+        <div id="about_us">
+          <TextSection title="Who are we?">
+            International company focused on creating the best conditions for
+            the drivers and truck owners. With the highest CPM on the market we
+            attract best drivers for the best loads across United States
+          </TextSection>
+          <TextSection title="Are you an owner operator?">
+            We rent trailers under our authority and provide starting at 12%
+            from gross income <br />
+            <br /> Our operators are waiting for your call 24/7
+          </TextSection>
+        </div>
+        <div id="benefits">
+          <TextSection title="What do we provide?">
+            <div className="flex flex-col gap-y-10">
+              <div className="flex items-center gap-x-2">
+                <div>
+                  <HomeSVG />
+                </div>
+                <p>
+                  Flexible schedule to be home with your family every weekend
                 </p>
               </div>
+              <div className="flex items-center gap-x-2">
+                <div>
+                  <CarSVG />
+                </div>
+                <p> Dispatch experience is based on flatbed, reefer, dry van</p>
+              </div>
+              <div className="flex items-center gap-x-2">
+                <div>
+                  <WalletSVG />
+                </div>
+                <div className="w-full">
+                  <p className="mx-auto w-36"> Money transfer every friday</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-x-2">
+                <div>
+                  <HeartSVG />
+                </div>
+                <div className="w-full">
+                  <p className="mx-auto w-52">
+                    Occupational insurance and 24/7 safety dep.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </TextSection>
+          </TextSection>
+        </div>
         <CallNowPopup />
+        <div id="contact_us">
+          <ContactForm />
+        </div>
         {/* <div className="relative h-screen w-screen">
-
+      
         </div> */}
         {/* <div className="h-screen w-screen"></div> */}
       </main>

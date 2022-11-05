@@ -1,7 +1,14 @@
 import Image from "next/image";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
+import { scroller } from "react-scroll";
 
-const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
+const Sidebar = ({
+  isSidebarOpen,
+  setIsSidebarOpen,
+}: {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <div
       className={`fixed top-0 right-0 z-10 h-full w-[325px] bg-sidebar pt-24 text-white duration-300 ease-in-out ${
@@ -10,10 +17,43 @@ const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
     >
       <Image src="/logo-text.png" width={330} height={45} />
       <div className="text-md mr-10 mt-8 flex flex-col gap-y-2 text-right font-medium text-black">
-        <p>About us</p>
-        <p>Benefits</p>
+        <p
+          onClick={() => {
+            scroller.scrollTo("about_us", {
+              duration: 500,
+              delay: 0,
+              smooth: "easeInOutQuart",
+            });
+            setIsSidebarOpen(false);
+          }}
+        >
+          About us
+        </p>
+        <p
+          onClick={() => {
+            scroller.scrollTo("benefits", {
+              duration: 500,
+              delay: 0,
+              smooth: "easeInOutQuart",
+            });
+            setIsSidebarOpen(false);
+          }}
+        >
+          Benefits
+        </p>
+        <p
+          onClick={() => {
+            scroller.scrollTo("contact_us", {
+              duration: 500,
+              delay: 0,
+              smooth: "easeInOutQuart",
+            });
+            setIsSidebarOpen(false);
+          }}
+        >
+          Contact us
+        </p>
         <p>Call now</p>
-        <p>Contact us</p>
       </div>
       <div className="fixed bottom-0 mb-16 w-full text-center font-light text-black">
         <div className="pb-12">
