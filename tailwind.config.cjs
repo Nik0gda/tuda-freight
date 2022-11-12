@@ -14,6 +14,7 @@ module.exports = {
       "aplly-button": "#182782",
       "checkbox-border": "#D1D5DB",
       checkbox: "#F3F4F6",
+      footer: "#2D2824",
     },
     extend: {},
   },

@@ -18,8 +18,8 @@ const CarSVG = () => {
         <path
           d="M41.3642 30.4554L41.4175 30.6337H41.6037H42.8488C43.141 30.6337 43.3779 30.8706 43.3779 31.1628C43.3779 31.455 43.141 31.6919 42.8488 31.6919H41.9859H41.6962L41.7386 31.9785C41.7926 32.3434 41.8198 32.7123 41.8198 33.0822V36.6163C41.8198 37.2344 41.5514 37.7895 41.124 38.1721L41.0407 38.2466V38.3584V40.5116C41.0407 40.8038 40.8038 41.0407 40.5116 41.0407H39.7326C39.4404 41.0407 39.2035 40.8038 39.2035 40.5116V38.9535V38.7035H38.9535H28.0465H27.7965V38.9535V40.5116C27.7965 40.8038 27.5596 41.0407 27.2674 41.0407H26.4884C26.1962 41.0407 25.9593 40.8038 25.9593 40.5116V38.3584V38.2466L25.876 38.1721C25.4486 37.7895 25.1802 37.2344 25.1802 36.6163V33.0822C25.1802 32.7123 25.2075 32.3434 25.2615 31.9785L25.3039 31.6919H25.0141H24.1512C23.859 31.6919 23.6221 31.455 23.6221 31.1628C23.6221 30.8706 23.859 30.6337 24.1512 30.6337H25.3964H25.5825L25.6359 30.4554L26.7685 26.6693C27.0328 25.7856 27.8458 25.1802 28.7681 25.1802H38.2319C39.1542 25.1802 39.9672 25.7856 40.2316 26.6693L41.3642 30.4554Z"
           stroke="white"
-          stroke-opacity="0.3"
-          stroke-width="0.5"
+          strokeOpacity="0.3"
+          strokeWidth="0.5"
         />
         <g filter="url(#filter1_d_17_27)">
           <circle cx="27.657" cy="33.8896" r="1.1686" fill="#FFCCD1" />
@@ -36,9 +36,9 @@ const CarSVG = () => {
           width="32.2558"
           height="28.3605"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -71,9 +71,9 @@ const CarSVG = () => {
           width="10.3372"
           height="10.3372"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -106,9 +106,9 @@ const CarSVG = () => {
           width="10.3372"
           height="10.3372"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -142,8 +142,8 @@ const CarSVG = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(33.5 33.5) rotate(90) scale(33.5)"
         >
-          <stop stop-color="#663339" />
-          <stop offset="1" stop-color="#562B30" />
+          <stop stopColor="#663339" />
+          <stop offset="1" stopColor="#562B30" />
         </radialGradient>
       </defs>
     </svg>

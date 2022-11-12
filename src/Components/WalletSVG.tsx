@@ -26,8 +26,8 @@ const WalletSVG = () => {
           height="15.8605"
           rx="2.75"
           stroke="white"
-          stroke-opacity="0.3"
-          stroke-width="0.5"
+          strokeOpacity="0.3"
+          strokeWidth="0.5"
         />
         <rect
           x="25.7093"
@@ -36,7 +36,7 @@ const WalletSVG = () => {
           height="14.0233"
           rx="3"
           fill="#6D75F2"
-          fill-opacity="0.9"
+          fillOpacity="0.9"
         />
         <rect
           x="25.9593"
@@ -45,8 +45,8 @@ const WalletSVG = () => {
           height="13.5233"
           rx="2.75"
           stroke="white"
-          stroke-opacity="0.3"
-          stroke-width="0.5"
+          strokeOpacity="0.3"
+          strokeWidth="0.5"
         />
         <g filter="url(#filter1_d_17_43)">
           <rect
@@ -64,8 +64,8 @@ const WalletSVG = () => {
             height="5.73256"
             rx="1.75"
             stroke="white"
-            stroke-opacity="0.3"
-            stroke-width="0.5"
+            strokeOpacity="0.3"
+            strokeWidth="0.5"
           />
         </g>
         <rect
@@ -85,9 +85,9 @@ const WalletSVG = () => {
           width="30.6977"
           height="28.3605"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -120,9 +120,9 @@ const WalletSVG = () => {
           width="15.0116"
           height="14.2325"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -156,8 +156,8 @@ const WalletSVG = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(33.5 33.5) rotate(90) scale(33.5)"
         >
-          <stop stop-color="#1D2273" />
-          <stop offset="1" stop-color="#161A59" />
+          <stop stopColor="#1D2273" />
+          <stop offset="1" stopColor="#161A59" />
         </radialGradient>
       </defs>
     </svg>

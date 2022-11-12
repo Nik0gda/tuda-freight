@@ -18,8 +18,8 @@ const HeartSVG = () => {
         <path
           d="M33.3163 27.5107L33.4999 27.7093L33.6835 27.5107L35.1449 25.9296C37.0285 23.8917 40.0737 23.8917 41.9574 25.9296C43.8514 27.9788 43.8514 31.3087 41.9574 33.3578L33.5254 42.4804L33.5001 42.453L33.4746 42.4805L25.0426 33.358C23.1486 31.3089 23.1486 27.979 25.0426 25.9298C26.9263 23.8919 29.9715 23.8919 31.8551 25.9298L33.3163 27.5107Z"
           stroke="white"
-          stroke-opacity="0.3"
-          stroke-width="0.5"
+          strokeOpacity="0.3"
+          strokeWidth="0.5"
         />
       </g>
       <defs>
@@ -30,9 +30,9 @@ const HeartSVG = () => {
           width="32.2558"
           height="30.6977"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -66,8 +66,8 @@ const HeartSVG = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(33.5 33.5) rotate(90) scale(33.5)"
         >
-          <stop stop-color="#B8003D" />
-          <stop offset="1" stop-color="#9E0035" />
+          <stop stopColor="#B8003D" />
+          <stop offset="1" stopColor="#9E0035" />
         </radialGradient>
       </defs>
     </svg>

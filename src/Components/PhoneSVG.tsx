@@ -50,8 +50,8 @@ const PhoneSVG = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(2.03636 9.18797) rotate(-50.9472) scale(10.993 11.2061)"
           >
-            <stop stop-color="#4DFFA6" />
-            <stop offset="1" stop-color="#49F29D" />
+            <stop stopColor="#4DFFA6" />
+            <stop offset="1" stopColor="#49F29D" />
           </radialGradient>
           <radialGradient
             id="paint1_radial_51_2"
@@ -61,8 +61,8 @@ const PhoneSVG = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(2.03636 9.18797) rotate(-50.9472) scale(10.993 11.2061)"
           >
-            <stop stop-color="#4DFFA6" />
-            <stop offset="1" stop-color="#49F29D" />
+            <stop stopColor="#4DFFA6" />
+            <stop offset="1" stopColor="#49F29D" />
           </radialGradient>
           <radialGradient
             id="paint2_radial_51_2"
@@ -72,8 +72,8 @@ const PhoneSVG = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(2.03636 9.18797) rotate(-50.9472) scale(10.993 11.2061)"
           >
-            <stop stop-color="#4DFFA6" />
-            <stop offset="1" stop-color="#49F29D" />
+            <stop stopColor="#4DFFA6" />
+            <stop offset="1" stopColor="#49F29D" />
           </radialGradient>
         </defs>
       </svg>

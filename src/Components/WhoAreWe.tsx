@@ -26,13 +26,13 @@ const WhoAreWe = () => {
         <img
           src="/truck.jpg"
           alt="Phone image"
-          className="h-[323px] w-[677px] -translate-x-20 rounded-[37px] object-cover"
+          className="h-[323px] w-[677px] rounded-[37px] object-cover md:-translate-x-40 lg:-translate-x-20"
         />
-        <div>
+        <div className="md:-translate-x-28 lg:-translate-x-4">
           <div className="mx-auto w-80 text-center">
             <SectionTitle title="Are you an owner operator?" />
           </div>
-          <div className="mx-auto w-[410px] pt-5 text-center text-xl font-light text-black">
+          <div className="mx-auto pt-5 text-center text-xl font-light text-black md:w-[300px] lg:w-[410px] ">
             We rent trailers under our authority and provide starting at 12%
             from gross income
             <br />

@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import Benefits from "../Components/Benefits";
-import BenefitsBottom from "../Components/BenefitsBottom";
 import CallNowButton from "../Components/CallNowButton";
 import CallNowPopup from "../Components/CallNowPopup";
 import CarSVG from "../Components/CarSVG";
@@ -12,8 +11,6 @@ import HeartSVG from "../Components/HeartSVG";
 import HomeSVG from "../Components/HomeSVG";
 import Navbar from "../Components/Navbar";
 import NavbarButton from "../Components/NavbarButton";
-import PhoneSVG from "../Components/PhoneSVG";
-import PhoneSVGCall from "../Components/PhoneSVGCall";
 import SectionTitle from "../Components/SectionTitle";
 import Sidebar from "../Components/Sidebar";
 import TextSection from "../Components/TextSection";
@@ -42,10 +39,10 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <main className="relative w-screen bg-background">
+      <main className="relative w-full overflow-y-hidden bg-background">
         {/* Hero */}
 
-        <div className="h-screen w-screen bg-[url('/background.jpg')] bg-cover bg-[center_top_45%] md:h-[50vh]">
+        <div className="h-screen w-full bg-[url('/background.jpg')] bg-cover bg-[center_top_47%] md:h-[60vh]">
           <Sidebar
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
@@ -61,7 +58,7 @@ const Home: NextPage = () => {
             />
           </div>
           <Navbar />
-          <div className="w-screen pt-5">
+          <div className="w-full pt-5">
             <div className="mx-auto w-fit md:hidden">
               <Image
                 src="/tuda-logo-transparent(1).png"
@@ -69,12 +66,12 @@ const Home: NextPage = () => {
                 height={200}
               />
             </div>
-            <div className="mx-auto w-fit md:uppercase">
+            <div className="mx-auto w-fit md:mt-12 md:uppercase">
               <SectionTitle title={"Empowering drivers"} textSizeBig={true} />
               <Benefits />
             </div>
 
-            <div className="mx-auto mt-10 w-fit md:hidden">
+            <div className="mx-auto mt-8 w-fit md:hidden">
               <CallNowButton />
             </div>
           </div>
@@ -95,12 +92,14 @@ const Home: NextPage = () => {
         </div>
         <div className="hidden md:block">
           <WhoAreWe />
-          <BenefitsBottom />
         </div>
-        <div id="benefits" className="md:hidden">
-          <TextSection title="What do we provide?">
-            <div className="flex flex-col gap-y-10">
-              <div className="flex items-center gap-x-2">
+        <div id="benefits">
+          <div className="mx-auto w-80 pt-20 text-center">
+            <SectionTitle title="What do we provide" />
+          </div>
+          <div className="mx-auto w-72 pt-5 text-center text-xl font-light text-black md:w-fit">
+            <div className="flex flex-col gap-y-10  md:mx-auto md:flex  md:flex-row md:gap-52 md:gap-y-0 lg:gap-64 xl:gap-80">
+              <div className="flex items-center gap-x-2 md:w-72">
                 <div>
                   <HomeSVG />
                 </div>
@@ -108,13 +107,15 @@ const Home: NextPage = () => {
                   Flexible schedule to be home with your family every weekend
                 </p>
               </div>
-              <div className="flex items-center gap-x-2">
+              <div className="flex items-center gap-x-2 md:w-72">
                 <div>
                   <CarSVG />
                 </div>
                 <p> Dispatch experience is based on flatbed, reefer, dry van</p>
               </div>
-              <div className="flex items-center gap-x-2">
+            </div>
+            <div className="flex flex-col gap-y-10 pt-10 md:mx-auto md:flex md:w-fit md:flex-row md:gap-16 md:gap-y-0 lg:gap-28 xl:gap-40">
+              <div className="flex items-center gap-x-2 md:w-72">
                 <div>
                   <WalletSVG />
                 </div>
@@ -122,7 +123,7 @@ const Home: NextPage = () => {
                   <p className="mx-auto w-36"> Money transfer every friday</p>
                 </div>
               </div>
-              <div className="flex items-center gap-x-2">
+              <div className="flex items-center gap-x-2 md:w-72">
                 <div>
                   <HeartSVG />
                 </div>
@@ -133,7 +134,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </TextSection>
+          </div>
         </div>
         <div className="md:hidden">
           <CallNowPopup />
@@ -141,10 +142,16 @@ const Home: NextPage = () => {
         <div id="contact_us">
           <ContactForm />
         </div>
-        {/* <div className="relative h-screen w-screen">
+        <div className="mt-20 h-20 w-full bg-footer text-center">
+          <div className="mx-auto flex w-fit gap-72 pt-8 text-background">
+            <p>Email: TudaFreight@gmail.com</p>
+            <p>Phone number: +1 (504) 717-9684</p>
+          </div>
+        </div>
+        {/* <div className="relative h-screen w-full">
       
         </div> */}
-        {/* <div className="h-screen w-screen"></div> */}
+        {/* <div className="h-screen w-full"></div> */}
       </main>
     </>
   );

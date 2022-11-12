@@ -41,9 +41,9 @@ const LanguageDropdown = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M19 9l-7 7-7-7"
           ></path>
         </svg>
@@ -63,7 +63,7 @@ const LanguageDropdown = () => {
               onClick={() => {
                 changeLanguage("English");
               }}
-              className=" block py-2 px-4 dark:hover:text-call"
+              className=" block cursor-pointer py-2 px-4 dark:hover:text-call"
             >
               English
             </a>
@@ -73,7 +73,7 @@ const LanguageDropdown = () => {
               onClick={() => {
                 changeLanguage("Spanish");
               }}
-              className=" block py-2 px-4 dark:hover:text-call"
+              className=" block cursor-pointer py-2 px-4 dark:hover:text-call"
             >
               Spanish
             </a>
@@ -83,7 +83,7 @@ const LanguageDropdown = () => {
               onClick={() => {
                 changeLanguage("Russian");
               }}
-              className="block py-2 px-4 dark:hover:text-call"
+              className="block cursor-pointer py-2 px-4 dark:hover:text-call"
             >
               Russian
             </a>

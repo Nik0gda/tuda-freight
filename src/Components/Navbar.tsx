@@ -3,7 +3,7 @@ import LanguageDropdown from "./LanguageDropdown";
 import { scroller } from "react-scroll";
 const Navbar = () => {
   return (
-    <nav className="border-gray-200 dark:bg-gray-900 hidden rounded px-2 py-2.5 pt-8 sm:px-4 md:block">
+    <nav className="hidden rounded px-2 py-2.5 pt-8 sm:px-4 md:block">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <a href="#" className="flex items-center">
           <img src="/logo-text.png" className="mr-3 h-6 sm:h-9" />

@@ -11,32 +11,36 @@ const ContactForm = () => {
     <div className="w-full pt-24">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col items-center justify-center">
-          <p className="text-2xl font-extrabold">Apply now</p>
-          <div className="mt-5">
-            <p className="pl-2 pb-1 text-sm text-black opacity-75">
-              First name
-            </p>
-            <input
-              {...register("firstName", {
-                required: true,
-                maxLength: 30,
-                pattern: /^[A-Za-z]+$/i,
-              })}
-              className="h-10 w-64 rounded-md pl-4 text-xs text-black"
-              placeholder="John"
-            />
-          </div>
-          <div className="mt-5">
-            <p className="pl-2 pb-1 text-sm text-black opacity-75">Last name</p>
-            <input
-              {...register("lastName", {
-                required: true,
-                maxLength: 30,
-                pattern: /^[A-Za-z]+$/i,
-              })}
-              className="h-10 w-64 rounded-md pl-4 text-xs text-black"
-              placeholder="Smith"
-            />
+          <p className="text-2xl font-extrabold md:text-4xl">Apply now</p>
+          <div className="md:flex md:gap-4">
+            <div className="mt-5">
+              <p className="pl-2 pb-1 text-sm text-black opacity-75">
+                First name
+              </p>
+              <input
+                {...register("firstName", {
+                  required: true,
+                  maxLength: 30,
+                  pattern: /^[A-Za-z]+$/i,
+                })}
+                className="h-10 w-64 rounded-md pl-4 text-xs text-black md:w-52"
+                placeholder="John"
+              />
+            </div>
+            <div className="mt-5">
+              <p className="pl-2 pb-1 text-sm text-black opacity-75">
+                Last name
+              </p>
+              <input
+                {...register("lastName", {
+                  required: true,
+                  maxLength: 30,
+                  pattern: /^[A-Za-z]+$/i,
+                })}
+                className="h-10 w-64 rounded-md pl-4 text-xs text-black md:w-52"
+                placeholder="Smith"
+              />
+            </div>
           </div>
           <div className="mt-5">
             <p className="pl-2 pb-1 text-sm text-black opacity-75">
@@ -49,7 +53,7 @@ const ContactForm = () => {
                 pattern:
                   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
               })}
-              className="h-10 w-64 rounded-md pl-4 text-xs text-black"
+              className="h-10 w-64 rounded-md pl-4 text-xs text-black md:w-[27rem]"
               placeholder="you@example.com"
             />
           </div>
@@ -68,46 +72,50 @@ const ContactForm = () => {
                   return phoneNumber.isPossible();
                 },
               })}
-              className="h-10 w-64 rounded-md pl-4 text-xs text-black"
+              className="h-10 w-64 rounded-md pl-4 text-xs text-black md:w-[27rem]"
               placeholder="+1 (555) 987-6543"
             />
           </div>
-          <div className="mt-5">
-            <p className="pl-2 pb-1 text-sm text-black opacity-75">Home zip</p>
-            <input
-              type={"text"}
-              {...register("homeZip", {
-                required: true,
-                maxLength: 7,
-              })}
-              className="h-10 w-64 rounded-md pl-4 text-xs text-black"
-              placeholder="10001"
-            />
-          </div>
-          <div>
-            <div className="mt-5 flex items-center">
-              <input
-                type="checkbox"
-                {...register("old", {
-                  required: true,
-                })}
-                className=""
-              />
-              <p className="pl-2 text-sm font-light text-black opacity-75">
-                I’m over 21 years old
+          <div className="md:flex md:items-end md:gap-12">
+            <div className="mt-5">
+              <p className="pl-2 pb-1 text-sm text-black opacity-75">
+                Home zip
               </p>
+              <input
+                type={"text"}
+                {...register("homeZip", {
+                  required: true,
+                  maxLength: 7,
+                })}
+                className="h-10 w-64 rounded-md pl-4 text-xs text-black md:w-52"
+                placeholder="10001"
+              />
             </div>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                {...register("cdla", {
-                  required: true,
-                })}
-                className=""
-              />
-              <p className="pl-2 text-sm font-light text-black opacity-75">
-                I have a valid CDL-A
-              </p>
+            <div>
+              <div className="mt-5 flex items-center md:pr-5">
+                <input
+                  type="checkbox"
+                  {...register("old", {
+                    required: true,
+                  })}
+                  className=""
+                />
+                <p className="pl-2 text-sm font-light text-black opacity-75">
+                  I’m over 21 years old
+                </p>
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  {...register("cdla", {
+                    required: true,
+                  })}
+                  className=""
+                />
+                <p className="pl-2 text-sm font-light text-black opacity-75">
+                  I have a valid CDL-A
+                </p>
+              </div>
             </div>
           </div>
           <br />
