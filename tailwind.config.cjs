@@ -11,7 +11,7 @@ module.exports = {
       black: "#000000",
       "selected-language": "#B5D6B2",
       language: "#DDDDDD",
-      "aplly-button": "#557EC9",
+      "aplly-button": "#182782",
       "checkbox-border": "#D1D5DB",
       checkbox: "#F3F4F6",
     },
