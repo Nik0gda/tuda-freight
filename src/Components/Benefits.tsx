@@ -1,4 +1,5 @@
 import React from "react";
+import { languageText } from "../translations";
 
 const Benefit = ({ description }: { description: string }) => {
   return (
@@ -24,12 +25,16 @@ const Benefit = ({ description }: { description: string }) => {
   );
 };
 
-const Benefits = () => {
+const Benefits = ({
+  selectedLanguageText,
+}: {
+  selectedLanguageText: languageText;
+}) => {
   return (
     <div className="mx-auto flex w-fit flex-col pt-3 xl:gap-1">
-      <Benefit description="Paycheck each friday" />
-      <Benefit description="Experienced dispatch" />
-      <Benefit description="Best CPM on the market" />
+      <Benefit description={selectedLanguageText.benefits[0]!} />
+      <Benefit description={selectedLanguageText.benefits[1]!} />
+      <Benefit description={selectedLanguageText.benefits[2]!} />
     </div>
   );
 };

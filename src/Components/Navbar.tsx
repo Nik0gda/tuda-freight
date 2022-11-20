@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import LanguageDropdown from "./LanguageDropdown";
 import { scroller } from "react-scroll";
-const Navbar = () => {
+import { languageText } from "../translations";
+
+const Navbar = ({
+  setSelctedLanguageText,
+  selectedLanguageText,
+}: {
+  setSelctedLanguageText: Dispatch<SetStateAction<languageText>>;
+  selectedLanguageText: languageText;
+}) => {
   return (
     <nav className="hidden rounded px-2 py-2.5 pt-8 sm:px-4 md:block">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
@@ -23,9 +31,9 @@ const Navbar = () => {
               });
             }}
           >
-            Apply now
+            {selectedLanguageText.navbar.applyNow}
           </button>
-          <LanguageDropdown />
+          <LanguageDropdown setSelctedLanguageText={setSelctedLanguageText} />
         </div>
       </div>
     </nav>

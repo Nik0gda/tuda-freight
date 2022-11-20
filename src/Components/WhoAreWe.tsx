@@ -1,19 +1,22 @@
 import Image from "next/image";
 import React from "react";
+import { languageText } from "../translations";
 import SectionTitle from "./SectionTitle";
 
-const WhoAreWe = () => {
+const WhoAreWe = ({
+  selectedLanguageText,
+}: {
+  selectedLanguageText: languageText;
+}) => {
   return (
     <div className="flex flex-col gap-16">
       <div className="mx-auto flex w-fit items-center pt-20 md:gap-5 lg:gap-14 xl:gap-32">
         <div>
           <div className="mx-auto w-80 text-center">
-            <SectionTitle title="Who are we" />
+            <SectionTitle title={selectedLanguageText.textTitleOne} />
           </div>
           <div className="mx-auto w-[410px] pt-5 text-center text-xl font-light text-black">
-            International company focused on creating the best conditions for
-            the drivers and truck owners. With the highest CPM on the market we
-            attract best drivers for the best loads across United States
+            {selectedLanguageText.textDescriptionOne}
           </div>
         </div>
         <img
@@ -30,14 +33,13 @@ const WhoAreWe = () => {
         />
         <div className="md:-translate-x-28 lg:-translate-x-4">
           <div className="mx-auto w-80 text-center">
-            <SectionTitle title="Are you an owner operator?" />
+            <SectionTitle title={selectedLanguageText.textTitleTwo} />
           </div>
           <div className="mx-auto pt-5 text-center text-xl font-light text-black md:w-[300px] lg:w-[410px] ">
-            We rent trailers under our authority and provide starting at 12%
-            from gross income
+            {selectedLanguageText.textDescriptionTwoP1}
             <br />
             <br />
-            Our operators are waiting for your call 24/7
+            {selectedLanguageText.textDescriptionTwoP2}
           </div>
         </div>
       </div>

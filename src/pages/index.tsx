@@ -16,9 +16,12 @@ import Sidebar from "../Components/Sidebar";
 import TextSection from "../Components/TextSection";
 import WalletSVG from "../Components/WalletSVG";
 import WhoAreWe from "../Components/WhoAreWe";
+import { langaugeTexts, languageText } from "../translations";
 
 const Home: NextPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedLanguageText, setSelectedLanguageText] =
+    useState<languageText>(langaugeTexts.en);
 
   return (
     <>
@@ -38,7 +41,6 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-
       <main className="relative w-full overflow-y-hidden bg-background">
         {/* Hero */}
 
@@ -46,6 +48,8 @@ const Home: NextPage = () => {
           <Sidebar
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
+            setSelctedLanguageText={setSelectedLanguageText}
+            selectedLanguageText={selectedLanguageText}
           />
           <div className="md:hidden">
             <NavbarButton
@@ -57,7 +61,10 @@ const Home: NextPage = () => {
               isSidebarOpen={isSidebarOpen}
             />
           </div>
-          <Navbar />
+          <Navbar
+            setSelctedLanguageText={setSelectedLanguageText}
+            selectedLanguageText={selectedLanguageText}
+          />
           <div className="w-full pt-5">
             <div className="mx-auto w-fit md:hidden">
               <Image
@@ -67,8 +74,11 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="mx-auto w-fit md:mt-12 md:uppercase">
-              <SectionTitle title={"Empowering drivers"} textSizeBig={true} />
-              <Benefits />
+              <SectionTitle
+                title={selectedLanguageText.title}
+                textSizeBig={true}
+              />
+              <Benefits selectedLanguageText={selectedLanguageText} />
             </div>
 
             <div className="mx-auto mt-8 w-fit md:hidden">
@@ -79,23 +89,21 @@ const Home: NextPage = () => {
 
         {/* About us */}
         <div id="about_us" className="md:hidden">
-          <TextSection title="Who are we?">
-            International company focused on creating the best conditions for
-            the drivers and truck owners. With the highest CPM on the market we
-            attract best drivers for the best loads across United States
+          <TextSection title={selectedLanguageText.textTitleOne}>
+            {selectedLanguageText.textDescriptionOne}
           </TextSection>
-          <TextSection title="Are you an owner operator?">
-            We rent trailers under our authority and provide starting at 12%
-            from gross income <br />
-            <br /> Our operators are waiting for your call 24/7
+          <TextSection title={selectedLanguageText.textTitleTwo}>
+            {selectedLanguageText.textDescriptionTwoP1}
+            <br />
+            <br /> {selectedLanguageText.textDescriptionTwoP1}
           </TextSection>
         </div>
         <div className="hidden md:block">
-          <WhoAreWe />
+          <WhoAreWe selectedLanguageText={selectedLanguageText} />
         </div>
         <div id="benefits">
           <div className="mx-auto w-80 pt-20 text-center">
-            <SectionTitle title="What do we provide" />
+            <SectionTitle title={selectedLanguageText.textTitleThree} />
           </div>
           <div className="mx-auto w-72 pt-5 text-center text-xl font-light text-black md:w-fit">
             <div className="flex flex-col gap-y-10  md:mx-auto md:flex  md:flex-row md:gap-52 md:gap-y-0 lg:gap-64 xl:gap-80">
@@ -103,15 +111,13 @@ const Home: NextPage = () => {
                 <div>
                   <HomeSVG />
                 </div>
-                <p>
-                  Flexible schedule to be home with your family every weekend
-                </p>
+                <p>{selectedLanguageText.textDescriptionThreeP1}</p>
               </div>
               <div className="flex items-center gap-x-2 md:w-72">
                 <div>
                   <CarSVG />
                 </div>
-                <p> Dispatch experience is based on flatbed, reefer, dry van</p>
+                <p> {selectedLanguageText.textDescriptionThreeP2}</p>
               </div>
             </div>
             <div className="flex flex-col gap-y-10 pt-10 md:mx-auto md:flex md:w-fit md:flex-row md:gap-16 md:gap-y-0 lg:gap-28 xl:gap-40">
@@ -120,7 +126,10 @@ const Home: NextPage = () => {
                   <WalletSVG />
                 </div>
                 <div className="w-full">
-                  <p className="mx-auto w-36"> Money transfer every friday</p>
+                  <p className="mx-auto w-48">
+                    {" "}
+                    {selectedLanguageText.textDescriptionThreeP3}
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-x-2 md:w-72">
@@ -129,7 +138,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="w-full">
                   <p className="mx-auto w-52">
-                    Occupational insurance and 24/7 safety dep.
+                    {selectedLanguageText.textDescriptionThreeP4}
                   </p>
                 </div>
               </div>
@@ -140,9 +149,10 @@ const Home: NextPage = () => {
           <CallNowPopup />
         </div>
         <div id="contact_us">
-          <ContactForm />
+          <ContactForm selectedLanguageText={selectedLanguageText} />
         </div>
-        <div className="mt-20 h-20 w-full bg-footer text-center">
+
+        <div className="mt-20 hidden h-20 w-full bg-footer text-center md:block">
           <div className="mx-auto flex w-fit gap-72 pt-8 text-background">
             <p>Email: TudaFreight@gmail.com</p>
             <p>Phone number: +1 (504) 717-9684</p>

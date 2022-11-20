@@ -1,11 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
+import { langaugeTexts, language, languageText } from "../translations";
 
-const LanguageDropdown = () => {
+const LanguageDropdown = ({
+  setSelctedLanguageText,
+}: {
+  setSelctedLanguageText: Dispatch<SetStateAction<languageText>>;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState("English");
+  const [selected, setSelected] = useState<language>("en");
 
-  const changeLanguage = (language: string) => {
+  useEffect(() => {
+    setSelctedLanguageText(langaugeTexts[selected]);
+  }, [selected]);
+
+  const changeLanguage = (language: language) => {
     setSelected(language);
     setIsOpen(false);
   };
@@ -25,13 +34,7 @@ const LanguageDropdown = () => {
         type="button"
         onClick={toggle}
       >
-        {selected == "English"
-          ? "EN"
-          : selected == "Russian"
-          ? "RU"
-          : selected == "Spanish"
-          ? "ES"
-          : selected}
+        {selected.toUpperCase()}
         <svg
           className={`ml-2 h-4 w-4 ${isOpen ? "rotate-180" : ""}`}
           aria-hidden="true"
@@ -61,7 +64,7 @@ const LanguageDropdown = () => {
           <li>
             <a
               onClick={() => {
-                changeLanguage("English");
+                changeLanguage("en");
               }}
               className=" block cursor-pointer py-2 px-4 dark:hover:text-call"
             >
@@ -71,7 +74,7 @@ const LanguageDropdown = () => {
           <li>
             <a
               onClick={() => {
-                changeLanguage("Spanish");
+                changeLanguage("es");
               }}
               className=" block cursor-pointer py-2 px-4 dark:hover:text-call"
             >
@@ -81,7 +84,7 @@ const LanguageDropdown = () => {
           <li>
             <a
               onClick={() => {
-                changeLanguage("Russian");
+                changeLanguage("ru");
               }}
               className="block cursor-pointer py-2 px-4 dark:hover:text-call"
             >

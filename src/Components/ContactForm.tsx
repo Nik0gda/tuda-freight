@@ -1,21 +1,58 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import parsePhoneNumber from "libphonenumber-js";
+import { languageText } from "../translations";
 
-const ContactForm = () => {
+const ContactForm = ({
+  selectedLanguageText,
+}: {
+  selectedLanguageText: languageText;
+}) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const [isFormSubmitted, setIsFormSubmitted] = React.useState(false);
+  const {
+    form: {
+      age,
+      cdla,
+      email,
+      firstName,
+      lastName,
+      homeZipCode,
+      phoneNumber,
+      successMessageP1,
+      successMessageP2,
+      apply,
+    },
+  } = selectedLanguageText;
+  const onSubmit = async (data: any, e: any) => {
+    // fetch post request to /api/send-email
+
+    e.target.reset();
+
+    const req = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const res = await req.json();
+    console.log(res);
+
+    setIsFormSubmitted(true);
   };
   return (
     <div className="w-full pt-24">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col items-center justify-center">
-          <p className="text-2xl font-extrabold md:text-4xl">Apply now</p>
+          <p className="text-2xl font-extrabold md:text-4xl">
+            {selectedLanguageText.navbar.applyNow}
+          </p>
           <div className="md:flex md:gap-4">
             <div className="mt-5">
               <p className="pl-2 pb-1 text-sm text-black opacity-75">
-                First name
+                {firstName}
               </p>
               <input
                 {...register("firstName", {
@@ -29,7 +66,7 @@ const ContactForm = () => {
             </div>
             <div className="mt-5">
               <p className="pl-2 pb-1 text-sm text-black opacity-75">
-                Last name
+                {lastName}
               </p>
               <input
                 {...register("lastName", {
@@ -43,9 +80,7 @@ const ContactForm = () => {
             </div>
           </div>
           <div className="mt-5">
-            <p className="pl-2 pb-1 text-sm text-black opacity-75">
-              Email address
-            </p>
+            <p className="pl-2 pb-1 text-sm text-black opacity-75">{email}</p>
             <input
               {...register("email", {
                 required: true,
@@ -59,7 +94,7 @@ const ContactForm = () => {
           </div>
           <div className="mt-5">
             <p className="pl-2 pb-1 text-sm text-black opacity-75">
-              Phone number
+              {phoneNumber}
             </p>
             <input
               {...register("phoneNumber", {
@@ -79,7 +114,7 @@ const ContactForm = () => {
           <div className="md:flex md:items-end md:gap-12">
             <div className="mt-5">
               <p className="pl-2 pb-1 text-sm text-black opacity-75">
-                Home zip
+                {homeZipCode}
               </p>
               <input
                 type={"text"}
@@ -101,7 +136,7 @@ const ContactForm = () => {
                   className=""
                 />
                 <p className="pl-2 text-sm font-light text-black opacity-75">
-                  I’m over 21 years old
+                  {age}
                 </p>
               </div>
               <div className="flex items-center">
@@ -113,14 +148,20 @@ const ContactForm = () => {
                   className=""
                 />
                 <p className="pl-2 text-sm font-light text-black opacity-75">
-                  I have a valid CDL-A
+                  {cdla}
                 </p>
               </div>
             </div>
           </div>
           <br />
+          {isFormSubmitted && (
+            <p className="pt-10 text-center text-xl font-bold text-call">
+              {successMessageP1}
+              <br /> {successMessageP2}
+            </p>
+          )}
           <input
-            value="Apply"
+            value={apply}
             type="submit"
             className="mx-auto mt-10 mb-20 h-11 w-32 rounded-xl bg-aplly-button text-xl text-white"
           />
