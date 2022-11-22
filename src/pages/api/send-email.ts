@@ -14,7 +14,7 @@ export default async function handler(
   // let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com.",
     port: 587,
     secure: false, // true for 465, false for other ports
@@ -25,7 +25,7 @@ export default async function handler(
   });
 
   // send mail with defined transport object
-  let info = await transporter.sendMail({
+  await transporter.sendMail({
     from: "tuda.freight.email@gmail.com", // sender address
     to: "cebanu.dan3@gmail.com", // list of receivers
     subject: `New candidate: ${firstName} ${lastName}`, // Subject line

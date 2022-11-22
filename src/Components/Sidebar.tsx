@@ -71,6 +71,7 @@ const Sidebar = ({
         <div className="mx-auto flex w-fit gap-x-5">
           {["EN", "ES", "RU"].map((lang) => (
             <div
+              key={lang}
               onClick={() => {
                 setSelctedLanguageText(
                   langaugeTexts[lang.toLowerCase() as language]
