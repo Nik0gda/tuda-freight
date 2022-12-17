@@ -102,13 +102,13 @@ const ContactForm = ({
                 maxLength: 50,
                 validate: (value) => {
                   if (!value) return false;
-                  const phoneNumber = parsePhoneNumber(value);
+                  const phoneNumber = parsePhoneNumber(value, "US");
                   if (!phoneNumber) return false;
                   return phoneNumber.isPossible();
                 },
               })}
               className="h-10 w-64 rounded-md pl-4 text-xs text-black md:w-[27rem]"
-              placeholder="+1 (555) 987-6543"
+              placeholder="(555) 987-6543"
             />
           </div>
           <div className="md:flex md:items-end md:gap-12">
