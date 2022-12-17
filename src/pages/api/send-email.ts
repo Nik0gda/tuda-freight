@@ -4,8 +4,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  res.status(200).json({ message: "Email sent" });
-
   const { firstName, lastName, email, phoneNumber, homeZip, old, cdla } =
     req.body;
 
@@ -42,6 +40,8 @@ export default async function handler(
     `, // plain text body
     })
     .catch((err) => console.error(err));
+
+  res.status(200).json({ message: "Email sent" });
 
   // console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
