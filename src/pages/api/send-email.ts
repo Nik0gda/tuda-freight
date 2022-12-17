@@ -25,11 +25,12 @@ export default async function handler(
   });
 
   // send mail with defined transport object
-  await transporter.sendMail({
-    from: "tuda.freight.email@gmail.com", // sender address
-    to: "Tudafreight@gmail.com", // list of receivers
-    subject: `New candidate: ${firstName} ${lastName}`, // Subject line
-    text: `New candidate applied on tuda freight website:
+  await transporter
+    .sendMail({
+      from: "tuda.freight.email@gmail.com", // sender address
+      to: "cebanu.dan3@gmail.com", // list of receivers
+      subject: `New candidate: ${firstName} ${lastName}`, // Subject line
+      text: `New candidate applied on tuda freight website:
       \nFirst name: ${firstName}
       \nLast name: ${lastName}
       \nEmail: ${email}
@@ -39,7 +40,8 @@ export default async function handler(
       \nValid CDLA: ${cdla}
 
     `, // plain text body
-  });
+    })
+    .catch((err) => console.error(err));
 
   // console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
