@@ -28,6 +28,7 @@ const ContactForm = ({
     // fetch post request to /api/send-email
 
     e.target.reset();
+    setIsFormSubmitted(true);
 
     const req = await fetch("/api/send-email", {
       method: "POST",
@@ -39,8 +40,6 @@ const ContactForm = ({
 
     const res = await req.json();
     console.log(res);
-
-    setIsFormSubmitted(true);
   };
   return (
     <div className="w-full pt-24">

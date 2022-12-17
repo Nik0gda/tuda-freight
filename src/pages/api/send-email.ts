@@ -26,7 +26,7 @@ export default async function handler(
   await transporter
     .sendMail({
       from: "tuda.freight.email@gmail.com", // sender address
-      to: "cebanu.dan3@gmail.com", // list of receivers
+      to: "TudaFreight@gmail.com", // list of receivers
       subject: `New candidate: ${firstName} ${lastName}`, // Subject line
       text: `New candidate applied on tuda freight website:
       \nFirst name: ${firstName}
